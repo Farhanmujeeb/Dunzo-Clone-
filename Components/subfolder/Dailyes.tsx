@@ -63,8 +63,7 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
           <TouchableOpacity>
             <Text style={styles.spottt}>View all</Text>
           </TouchableOpacity>
-        </View>
-
+        </View>      
         <ScrollView style={styles.scrollm} horizontal>
           {Data.map(item => (
             <View style={styles.mapitems} key={item.id}>
@@ -195,7 +194,6 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
               }}
               source={require('../Images/nine.jpg')}
             />
-
             <Image
               style={{
                 width: 300,
@@ -214,7 +212,6 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
               }}
               source={require('../Images/eleven.jpg')}
             />
-
             <Image
               style={{
                 width: 300,
@@ -224,7 +221,6 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
               }}
               source={require('../Images/twelve.jpg')}
             />
-
             <Image
               style={{
                 width: 300,
@@ -234,7 +230,6 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
               }}
               source={require('../Images/thirteen.jpg')}
             />
-
             <Image
               style={{
                 width: 300,
@@ -246,7 +241,6 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
             />
           </ScrollView>
         </View>
-
         <View
           style={{
             height: 450,
