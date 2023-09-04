@@ -49,7 +49,7 @@ const Login: React.FC<LoginProps> = ({isVisible, onClose}) => {
             <Text style={styles.errorText}>{errorMessage}</Text>
           ) : null}
           <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-            <Text style={styles.loginButtonText}>Login</Text>
+            <Text style={styles.loginButtonText}>Sign In</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={onClose} style={styles.closeButton}>
             <Text style={styles.closeButtonText}>Close</Text>
