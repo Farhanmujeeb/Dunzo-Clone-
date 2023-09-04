@@ -84,7 +84,7 @@ const Stores = () => {
           style={{
             justifyContent: 'space-around',
             flexDirection: 'row',
-            marginTop: 25,
+            marginTop: 20,
             height: 80,
           }}>
           <TouchableOpacity>
