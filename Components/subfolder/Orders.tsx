@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {useCart} from '../ShopContext';
 import {ScrollView} from 'react-native-gesture-handler';
 
-///////////////////// Define a Product type /////////////////////
+///////////////////// Define a Product type ////////////////////////
 type Product = {
   id: number;
   title: string;
@@ -20,39 +20,52 @@ const Orders = () => {
   return (
     <ScrollView>
       <View style={styles.container}>
-        {cartItems.map((item: Product) => (
-          <View key={item.id} style={styles.card}>
-            <Image source={item.Image} style={styles.image} />
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.kg}> {item.kg}</Text>
-            <Text style={styles.price}>
-              Price: ${item.price * item.quantity}
-            </Text>
-            <View style={styles.buttonContainer}>
-              <TouchableOpacity
-                style={styles.quantityButton}
-                onPress={() => decreaseQuantity(item.id)}>
-                <Text style={styles.quantityButtonText}>-</Text>
-              </TouchableOpacity>
-              <Text style={styles.quantityText}>{item.quantity}</Text>
-              <TouchableOpacity
-                style={styles.quantityButton}
-                onPress={() => increaseQuantity(item.id)}>
-                <Text style={styles.quantityButtonText}>+</Text>
-              </TouchableOpacity>
-            </View>
+        {cartItems.length === 0 ? (
+          <View style={styles.emptyCartContainer}>
+            <Image
+              source={require('../aseets/money.png')}
+              style={styles.emptyCartImage}
+            />
+            <Text style={styles.emptyCart}>Cart is empty</Text>
           </View>
-        ))}
-        {/* Display total amount */}
-        <Text style={styles.totalAmount}>Total Amount: ${totalAmount()}</Text>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Pay ${totalAmount()}</Text>
-        </TouchableOpacity>
+        ) : (
+          <>
+            {cartItems.map((item: Product) => (
+              <View key={item.id} style={styles.card}>
+                <Image source={item.Image} style={styles.image} />
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.kg}> {item.kg}</Text>
+                <Text style={styles.price}>
+                  Price: ${item.price * item.quantity}
+                </Text>
+                <View style={styles.buttonContainer}>
+                  <TouchableOpacity
+                    style={styles.quantityButton}
+                    onPress={() => decreaseQuantity(item.id)}>
+                    <Text style={styles.quantityButtonText}>-</Text>
+                  </TouchableOpacity>
+                  <Text style={styles.quantityText}>{item.quantity}</Text>
+                  <TouchableOpacity
+                    style={styles.quantityButton}
+                    onPress={() => increaseQuantity(item.id)}>
+                    <Text style={styles.quantityButtonText}>+</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            ))}
+            {/* Display total amount */}
+            <Text style={styles.totalAmount}>
+              Total Amount: ${totalAmount()}
+            </Text>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Pay ${totalAmount()}</Text>
+            </TouchableOpacity>
+          </>
+        )}
       </View>
     </ScrollView>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -143,6 +156,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+  emptyCart: {
+    fontSize: 18,
+    textAlign: 'center',
+    marginTop: 20,
+    color: 'black',
+  },
+  emptyCartContainer: {flexDirection: 'row'},
+  emptyCartImage: {width: 20, height: 20},
 });
 
 export default Orders;
