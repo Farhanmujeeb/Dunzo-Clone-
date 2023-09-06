@@ -75,7 +75,7 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
                   </Text>
                   <Text style={{color: 'grey'}}>{item.kg}</Text>
                   <Text
-                    style={{fontSize: 18, fontWeight: '500', color: 'black'}}>
+                    style={{fontSize: 18, fontWeight: '500', color: 'green'}}>
                     ${item.price}
                   </Text>
                 </View>

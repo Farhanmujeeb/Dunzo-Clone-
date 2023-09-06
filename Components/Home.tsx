@@ -30,23 +30,27 @@ const Home: React.FC<HomeProps> = ({navigation}) => {
     }
   };
 
+  const isButtonDisabled = phoneNumber.length !== 10;
+
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.image}
-        source={require('./aseets/dunzodaily.webp')}
-      />
-      <View style={styles.inputs}>
+      <Image style={styles.logo} source={require('./aseets/dunzodaily.webp')} />
+      <Text style={styles.title}>Welcome to Dunzo Daily</Text>
+      <Text style={styles.subtitle}>Your Delivery Partner</Text>
+      <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="+91 Enter Your Number"
-          placeholderTextColor="black"
+          placeholder="Enter Your Number"
+          placeholderTextColor="#888"
           keyboardType="phone-pad"
           value={phoneNumber}
           onChangeText={handlePhoneNumberChange}
         />
-        <TouchableOpacity style={styles.button} onPress={handleEnterPress}>
-          <Text style={styles.buttonText}>ENTER</Text>
+        <TouchableOpacity
+          style={[styles.button, isButtonDisabled && styles.disabledButton]}
+          onPress={handleEnterPress}
+          disabled={isButtonDisabled}>
+          <Text style={styles.buttonText}>Get Started</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -58,30 +62,52 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'white',
   },
-  image: {
-    width: 300,
-    height: 350,
+  logo: {
+    width: 200,
+    height: 200,
+    marginBottom: 20,
   },
-  inputs: {
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#333',
+  },
+  subtitle: {
+    fontSize: 16,
+    marginBottom: 30,
+    color: '#888',
+  },
+  inputContainer: {
     flexDirection: 'row',
-    marginTop: 20,
+    alignItems: 'center',
   },
   input: {
-    width: 250,
+    flex: 1,
     height: 40,
-    borderColor: 'gray',
+    borderColor: '#128C7E',
     borderWidth: 1,
-    color: 'black',
     paddingHorizontal: 10,
+    marginRight: 10,
+    backgroundColor: 'white',
+    fontSize: 17,
+    textAlign: 'left',
   },
   button: {
     backgroundColor: '#128C7E',
-    padding: 10,
-    marginLeft: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
   },
   buttonText: {
     color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  disabledButton: {
+    backgroundColor: '#45BFB4',
   },
 });
 

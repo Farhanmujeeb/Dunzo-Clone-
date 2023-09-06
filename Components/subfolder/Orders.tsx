@@ -1,9 +1,17 @@
-import React from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import {useCart} from '../ShopContext';
-import {ScrollView} from 'react-native-gesture-handler';
+import RegistrationPage from './RegistrationPage';
 
-///////////////////// Define a Product type ////////////////////////
+//////////////////=/// Define a Product type //////=//////////////////
+
 type Product = {
   id: number;
   title: string;
@@ -17,13 +25,19 @@ const Orders = () => {
   const {cartItems, totalAmount, decreaseQuantity, increaseQuantity} =
     useCart();
 
+  const [isRegistrationVisible, setRegistrationVisible] = useState(false);
+
+  const toggleRegistrationPopup = () => {
+    setRegistrationVisible(!isRegistrationVisible);
+  };
+
   return (
     <ScrollView>
       <View style={styles.container}>
         {cartItems.length === 0 ? (
           <View style={styles.emptyCartContainer}>
             <Image
-              source={require('../aseets/money.png')}
+              source={require('../aseets/trolley.png')}
               style={styles.emptyCartImage}
             />
             <Text style={styles.emptyCart}>Cart is empty</Text>
@@ -57,10 +71,23 @@ const Orders = () => {
             <Text style={styles.totalAmount}>
               Total Amount: ${totalAmount()}
             </Text>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={toggleRegistrationPopup} // Toggle the visibility of the popup
+            >
               <Text style={styles.buttonText}>Pay ${totalAmount()}</Text>
             </TouchableOpacity>
-          </>
+
+            {/* Conditionally render the RegistrationPage */}
+            {isRegistrationVisible && (
+              <RegistrationPage
+                isVisible={isRegistrationVisible}
+                onClose={toggleRegistrationPopup}
+                totalAmount={totalAmount()}
+                onCheckout={(name, address, mobileNumber) => {}}
+              />
+            )}
+           </>
         )}
       </View>
     </ScrollView>
@@ -163,7 +190,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   emptyCartContainer: {flexDirection: 'row'},
-  emptyCartImage: {width: 20, height: 20},
+  emptyCartImage: {width: 50, height: 50},
 });
 
 export default Orders;

@@ -20,7 +20,7 @@ const Login: React.FC<LoginProps> = ({isVisible, onClose}) => {
 
   const handleLogin = () => {
     if (!username || !password) {
-      setErrorMessage('Please enter both username and password.');
+      setErrorMessage('Please enter both Name and Password.');
       return;
     }
 
@@ -34,7 +34,7 @@ const Login: React.FC<LoginProps> = ({isVisible, onClose}) => {
           <Text style={styles.title}> Sign In</Text>
           <TextInput
             style={styles.input}
-            placeholder="Username"
+            placeholder="Name"
             value={username}
             onChangeText={text => setUsername(text)}
           />
