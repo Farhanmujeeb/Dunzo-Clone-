@@ -3,9 +3,11 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Dailyes from './subfolder/Dailyes';
 import Stores from './subfolder/Stores';
-import Courier from './subfolder/Courier';
+
+
 import Orders from './subfolder/Orders';
-const Tab = createBottomTabNavigator(); // Move the Tab creation outside the Daily component
+import Courier from './subfolder/Courier';
+const Tab = createBottomTabNavigator();
 const Daily = () => {
   return (
     <Tab.Navigator
@@ -14,7 +16,7 @@ const Daily = () => {
       <Tab.Screen
         name="Dailyes"
         component={Dailyes}
-        options={{ 
+        options={{
           tabBarIcon: ({focused}) => {
             return (
               <Image
@@ -41,7 +43,7 @@ const Daily = () => {
       />
       <Tab.Screen
         name="Courier"
-        component={Courier}
+        component={Courier as React.FC} 
         options={{
           tabBarIcon: ({focused}) => {
             return (

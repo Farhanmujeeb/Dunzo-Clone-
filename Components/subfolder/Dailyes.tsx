@@ -60,14 +60,22 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
         </View>
         <View style={styles.spotv}>
           <Text style={styles.spott}>In spotlight</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('View')}>
             <Text style={styles.spottt}>View all</Text>
           </TouchableOpacity>
-        </View>      
-        <ScrollView style={styles.scrollm} horizontal>
+        </View>
+        <ScrollView
+          style={styles.scrollm}
+          horizontal
+          showsHorizontalScrollIndicator={false}>
           {Data.map(item => (
             <View style={styles.mapitems} key={item.id}>
-              <Image style={styles.productImage} source={item.Image} />
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Details', {itemId: item.id});
+                }}>
+                <Image style={styles.productImage} source={item.Image} />
+              </TouchableOpacity>
               <View style={styles.maptext}>
                 <View>
                   <Text style={{color: 'black', fontSize: 15}}>
@@ -90,7 +98,10 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
         </ScrollView>
         <View
           style={{backgroundColor: 'white', borderRadius: 15, elevation: 5}}>
-          <ScrollView style={styles.scrollimg} horizontal>
+          <ScrollView
+            style={styles.scrollimg}
+            horizontal
+            showsHorizontalScrollIndicator={false}>
             <Image
               style={{
                 width: 370,
@@ -184,7 +195,10 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
             }}>
             Freshest Picks
           </Text>
-          <ScrollView style={{marginTop: 16}} horizontal>
+          <ScrollView
+            style={{marginTop: 16}}
+            horizontal
+            showsHorizontalScrollIndicator={false}>
             <Image
               style={{
                 width: 300,
@@ -538,14 +552,17 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
             }}>
             QUICK BITE
           </Text>
-          <ScrollView horizontal>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {Lays.map(items => (
               <View
                 style={[styles.cardmap, {backgroundColor: items.color}]}
                 key={items.id}>
                 <Text style={styles.titlemap}>{items.title}</Text>
                 <Text style={styles.infomap}>{items.kg}</Text>
+
+                <TouchableOpacity onPress={()=>navigation.navigate("Details",{itemId: items.id})}  >
                 <Image style={styles.imagemap} source={items.Image} />
+                </TouchableOpacity>
                 <View
                   style={{
                     flexDirection: 'row',
@@ -575,7 +592,7 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
             MOST POPULAR
           </Text>
 
-          <ScrollView horizontal>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {Prods.map(products => (
               <View key={products.id} style={styles.thrdmap1}>
                 <Image style={styles.thrdimg} source={products.Image} />
@@ -651,7 +668,7 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
         </View>
 
         <View style={styles.container2}>
-          <ScrollView horizontal>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {pack.map(allitems => (
               <View
                 style={[styles.card, {backgroundColor: allitems.color}]}
@@ -686,7 +703,7 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
             }}>
             Curated For Your Needs
           </Text>
-          <ScrollView horizontal>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View style={[styles.needcardContainer]}>
               {needs.map(allitems => (
                 <View
@@ -709,7 +726,7 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <ScrollView horizontal>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <Image
               style={{
                 width: 300,
@@ -774,7 +791,7 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
         </View>
 
         <View style={styles.itemcontainer}>
-          <ScrollView horizontal>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <FlatList
               style={{flex: 1}}
               data={Footer}

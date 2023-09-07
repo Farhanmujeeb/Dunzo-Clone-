@@ -95,6 +95,7 @@ export const CartProvider = ({children}) => {
         decreaseQuantity,
         totalAmount,
         increaseQuantity,
+
       }}>
       {children}
     </CartContext.Provider>

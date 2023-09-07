@@ -10,7 +10,7 @@ import {
 import {useCart} from '../ShopContext';
 import RegistrationPage from './RegistrationPage';
 
-//////////////////=/// Define a Product type //////=//////////////////
+//>/=/</>/=/</>/=/</>/=/</>/=/</>/=/</>/ Define a Product type /</>/=/</>/=/</>/=/</>/=/</>/=/</>/=/</>/
 
 type Product = {
   id: number;
@@ -73,12 +73,11 @@ const Orders = () => {
             </Text>
             <TouchableOpacity
               style={styles.button}
-              onPress={toggleRegistrationPopup} // Toggle the visibility of the popup
+              onPress={toggleRegistrationPopup} //  Toggle the visibility of the popup  //
             >
               <Text style={styles.buttonText}>Pay ${totalAmount()}</Text>
             </TouchableOpacity>
 
-            {/* Conditionally render the RegistrationPage */}
             {isRegistrationVisible && (
               <RegistrationPage
                 isVisible={isRegistrationVisible}
@@ -87,7 +86,7 @@ const Orders = () => {
                 onCheckout={(name, address, mobileNumber) => {}}
               />
             )}
-           </>
+          </>
         )}
       </View>
     </ScrollView>

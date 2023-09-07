@@ -106,7 +106,7 @@ const RegistrationPage: React.FC<RegistrationPageProps> = ({
           <Text style={styles.totalAmount}>Total Amount: ${totalAmount}</Text>
           <TouchableOpacity
             style={styles.checkoutButton}
-            onPress={handleCheckout} // Call handleCheckout on "Checkout" button press
+            onPress={handleCheckout} 
           >
             <Text style={styles.checkoutButtonText}>Checkout</Text>
           </TouchableOpacity>

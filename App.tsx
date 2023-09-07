@@ -7,6 +7,8 @@ import Home from './Components/Home';
 import Daily from './Components/Daily';
 import Login from './Components/subfolder/Login';
 import {CartContext, CartProvider} from './Components/ShopContext';
+import ViewAll from './Components/DescriptionPages/ViewAll';
+import Details from './Components/DescriptionPages/Details';
 const App = () => {
   const Stack = createStackNavigator();
   return (
@@ -20,6 +22,8 @@ const App = () => {
               <Login isVisible={true} onClose={() => navigation.goBack()} />
             )}
           </Stack.Screen>
+          <Stack.Screen name="View" component={ViewAll} />
+          <Stack.Screen name="Details" component={Details} />
         </Stack.Navigator>
       </NavigationContainer>
     </CartProvider>
