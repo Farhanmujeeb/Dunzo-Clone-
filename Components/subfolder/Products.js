@@ -60,7 +60,7 @@ export const Data = [
     title: 'Aarshirvad Atta',
     kg: '10 kgs',
     price: 530,
- 
+    des: 'Aashirvaad Atta Powder: Trusted choice for soft, nutritious rotis. Made from premium wheat, it ensures quality, purity, and health in every meal.',
   },
   {
     id: 2,
@@ -69,6 +69,7 @@ export const Data = [
     title: 'Ariel Matic Liquid',
     kg: '2 ltrs',
     price: 417,
+    des: 'Ariel Matic Liquid: A powerful laundry detergent designed for automatic washing machines. It removes tough stains, brightens colors, and leaves clothes fresh and clean.',
   },
   {
     id: 3,
@@ -77,6 +78,7 @@ export const Data = [
     title: 'Bru Instant Coffee',
     kg: '50 Gms',
     price: 105,
+    des: 'Bru Coffee: A beloved Indian coffee brand, known for its rich aroma and robust flavor. Perfectly brewed, it offers a delightful coffee experience, cherished by millions.',
   },
   {
     id: 4,
@@ -85,6 +87,7 @@ export const Data = [
     title: 'Dettol',
     kg: '450 ml',
     price: 215,
+    des: 'Dettol: A trusted household brand offering a range of hygiene products, including disinfectants and soaps, known for killing germs and promoting cleanliness for generations.',
   },
   {
     id: 5,
@@ -93,6 +96,7 @@ export const Data = [
     title: 'Surfexcel Matic Liquid',
     kg: '2 ltrs',
     price: 357,
+    des: 'Excel Washing Powder: A reliable laundry detergent that effectively removes stains, brightens clothes, and leaves a refreshing scent, ensuring clean and vibrant laundry every time',
   },
   {
     id: 6,
@@ -101,6 +105,7 @@ export const Data = [
     title: 'Parle-g Biscuits',
     kg: '800 gms',
     price: 86,
+    des: 'Parle-G: Iconic Indian biscuit brand, loved for its affordable and tasty glucose biscuits. A timeless snack, it has been a favorite for generations, symbolizing simplicity and nostalgia.',
   },
   {
     id: 7,
@@ -109,6 +114,7 @@ export const Data = [
     title: 'Prill Active Powers',
     kg: '750 ml',
     price: 204,
+    des: 'Prill Active Powers: Innovative cleaning pellets that enhance water quality, making it more effective for cleaning and laundry, reducing the need for detergents and chemicals.',
   },
 ];
 
@@ -121,6 +127,7 @@ export const Lays = [
     kg: '190 gms',
     price: 45,
     color: '#FFB6C1',
+    des: 'Lays Chips: Globally popular snack brand known for its wide variety of crispy potato chips with flavors that delight taste buds, offering a satisfying crunch.',
   },
   {
     id: 9,
@@ -130,6 +137,7 @@ export const Lays = [
     kg: '160 gms',
     price: 75,
     color: '#FFDAB9',
+    des: 'Lays Chips: Globally popular snack brand known for its wide variety of crispy potato chips with flavors that delight taste buds, offering a satisfying crunch.',
   },
   {
     id: 10,
@@ -139,6 +147,7 @@ export const Lays = [
     kg: '145 gms',
     price: 56,
     color: '#E6E6FA',
+    des: 'Doritos: A renowned international snack brand, famous for its bold and zesty tortilla chips, available in a range of exciting flavors for an irresistible snacking experience.',
   },
   {
     id: 11,
@@ -148,6 +157,7 @@ export const Lays = [
     kg: '58 gms',
     price: 45,
     color: '#AFEEEE',
+    des: 'Doritos: A renowned international snack brand, famous for its bold and zesty tortilla chips, available in a range of exciting flavors for an irresistible snacking experience.',
   },
   {
     id: 12,
@@ -157,6 +167,7 @@ export const Lays = [
     kg: '150 gms',
     price: 95,
     color: '#98FB98',
+    des: 'Lays Chips: Globally popular snack brand known for its wide variety of crispy potato chips with flavors that delight taste buds, offering a satisfying crunch.',
   },
   {
     id: 13,
@@ -166,6 +177,7 @@ export const Lays = [
     kg: '80 gms',
     price: 60,
     color: '#D3D3D3',
+    des: 'Lays Chips: Globally popular snack brand known for its wide variety of crispy potato chips with flavors that delight taste buds, offering a satisfying crunch.',
   },
   {
     id: 14,
@@ -175,6 +187,7 @@ export const Lays = [
     kg: '100 gms',
     price: 50,
     color: '#F08080',
+    des: 'Doritos: A renowned international snack brand, famous for its bold and zesty tortilla chips, available in a range of exciting flavors for an irresistible snacking experience.',
   },
   {
     id: 15,
@@ -184,6 +197,7 @@ export const Lays = [
     kg: '84.6 gms',
     price: 38,
     color: '#FFFFE0',
+    des: 'Doritos: A renowned international snack brand, famous for its bold and zesty tortilla chips, available in a range of exciting flavors for an irresistible snacking experience.',
   },
   {
     id: 16,
@@ -193,6 +207,7 @@ export const Lays = [
     kg: '100 gms',
     price: 54.99,
     color: '#B0E0E6',
+    des: 'Kurkure: A popular Indian snack brand, offering a crunchy and flavorful assortment of corn-based snacks with a unique and spicy twist, loved for its bold taste and textures',
   },
   {
     id: 17,
@@ -202,6 +217,7 @@ export const Lays = [
     kg: '100 gms',
     price: 54.99,
     color: '#98FB98',
+    des: 'Kurkure: A popular Indian snack brand, offering a crunchy and flavorful assortment of corn-based snacks with a unique and spicy twist, loved for its bold taste and textures',
   },
 ];
 export const Prods = [
@@ -212,6 +228,7 @@ export const Prods = [
     title: 'Turtle Chips',
     kg: '115 gms',
     price: 80,
+    des: 'Turtle Chips: A Korean snack sensation, these uniquely shaped, crispy chips deliver a delightful crunch, available in various flavors, offering a tasty and satisfying snack.',
   },
   {
     id: 19,
@@ -220,6 +237,7 @@ export const Prods = [
     title: 'Turtle Chips',
     kg: '115 gms',
     price: 80,
+    des: 'Turtle Chips: A Korean snack sensation, these uniquely shaped, crispy chips deliver a delightful crunch, available in various flavors, offering a tasty and satisfying snack.',
   },
   {
     id: 20,
@@ -228,6 +246,7 @@ export const Prods = [
     title: 'Plum Lotion',
     kg: '240ml (buy 1 get 1) ',
     price: 323,
+    des: 'Plum Lotion: A skincare product crafted with natural ingredients, such as plum extract, to moisturize and nourish the skin, leaving it refreshed and rejuvenated',
   },
   {
     id: 21,
@@ -236,6 +255,7 @@ export const Prods = [
     title: 'Cayenne Hot',
     kg: '250 gms',
     price: 90,
+    des: 'Cayenne Pepper Powder: A spicy and vibrant seasoning made from dried cayenne peppers. Adds fiery heat and a robust flavor to dishes, sauces, and marinades.',
   },
   {
     id: 22,
@@ -244,6 +264,7 @@ export const Prods = [
     title: 'Lizol Citrus',
     kg: '1 ltr',
     price: 220,
+    des: 'Lizol Citrus: A powerful floor cleaner with a refreshing citrus scent. Effectively disinfects and cleans surfaces, leaving a hygienic and pleasant aroma in your home.',
   },
   {
     id: 23,
@@ -252,6 +273,7 @@ export const Prods = [
     title: 'Ultra Refill',
     kg: '6 pcs',
     price: 373,
+    des: 'Ultra Refill Ink: A cost-effective option for replenishing printer ink cartridges. Designed to maintain print quality and extend the life of your printer supplies',
   },
 ];
 export const pack = [
@@ -265,6 +287,7 @@ export const pack = [
     price: 170,
     variants: '6 Variants available',
     color: '#B2DFDB',
+    des: '',
   },
   {
     id: 25,
@@ -276,6 +299,7 @@ export const pack = [
     price: 120,
     variants: '5 Variants available',
     color: '#BBDEFB',
+    des: '',
   },
   {
     id: 26,
@@ -286,6 +310,7 @@ export const pack = [
     name: 'Open A Pack',
     price: 135,
     color: '#E1BEE7',
+    des: '',
   },
   {
     id: 27,
@@ -297,6 +322,7 @@ export const pack = [
     price: 90,
     variants: '3 Variants available',
     color: '#FFCC80',
+    des: '',
   },
   {
     id: 28,
@@ -308,6 +334,7 @@ export const pack = [
     price: 209,
     variants: '4 Variants available',
     color: '#F8BBD0',
+    des: '',
   },
   {
     id: 29,
@@ -319,6 +346,7 @@ export const pack = [
     price: 86,
     variants: '5 Variants available',
     color: '#FFF9C4',
+    des: '',
   },
   {
     id: 30,
@@ -330,6 +358,7 @@ export const pack = [
     price: 140,
     variants: '3 Variants available',
     color: '#ECEFF1',
+    des: '',
   },
 ];
 export const needs = [
@@ -412,6 +441,7 @@ export const Footer = [
     title: 'Diet Coke',
     kg: '350 ml',
     price: 35,
+    des: '',
   },
   {
     id: 40,
@@ -420,6 +450,7 @@ export const Footer = [
     title: 'Boost',
     kg: '450 gm ',
     price: 295,
+    des: '',
   },
   {
     id: 41,
@@ -428,6 +459,7 @@ export const Footer = [
     title: 'Dettol',
     kg: '1 ltr',
     price: 442,
+    des: '',
   },
   {
     id: 42,
@@ -436,6 +468,7 @@ export const Footer = [
     title: 'Lays',
     kg: '50 gms',
     price: 49,
+    des: '',
   },
   {
     id: 43,
@@ -444,6 +477,7 @@ export const Footer = [
     title: 'Fruit juice',
     kg: '750 ml',
     price: 85,
+    des: '',
   },
   {
     id: 44,
@@ -452,6 +486,7 @@ export const Footer = [
     title: 'PediaSure',
     kg: '150 gms',
     price: 850,
+    des: '',
   },
   {
     id: 45,
@@ -460,6 +495,7 @@ export const Footer = [
     title: '3Roses',
     kg: '100 gms',
     price: 90,
+    des: '',
   },
   {
     id: 46,
@@ -468,6 +504,7 @@ export const Footer = [
     title: 'TATATEA',
     kg: '150 gms',
     price: 155,
+    des: '',
   },
   {
     id: 47,
@@ -476,6 +513,7 @@ export const Footer = [
     title: 'BournVita',
     kg: '450 gms',
     price: 325,
+    des: '',
   },
   {
     id: 48,
@@ -484,6 +522,7 @@ export const Footer = [
     title: 'NandiMilk',
     kg: '500 ml',
     price: 99,
+    des: '',
   },
   {
     id: 49,
@@ -492,6 +531,7 @@ export const Footer = [
     title: 'Boost',
     kg: '100 gms',
     price: 195,
+    des: '',
   },
   {
     id: 50,
@@ -500,6 +540,7 @@ export const Footer = [
     title: 'Sprite',
     kg: '350 ml',
     price: 35,
+    des: '',
   },
   {
     id: 51,
@@ -508,6 +549,7 @@ export const Footer = [
     title: 'Doritos',
     kg: '50 gms',
     price: 65,
+    des: '',
   },
   {
     id: 52,
@@ -516,6 +558,7 @@ export const Footer = [
     title: 'RedLabel',
     kg: '500 gms',
     price: 485,
+    des: '',
   },
   {
     id: 53,
@@ -524,6 +567,7 @@ export const Footer = [
     title: 'Nescafe',
     kg: '450 gms',
     price: 499,
+    des: '',
   },
   {
     id: 54,
@@ -532,5 +576,6 @@ export const Footer = [
     title: 'Cheese Sticks',
     kg: '760 gms',
     price: 899,
+    des: '',
   },
 ];

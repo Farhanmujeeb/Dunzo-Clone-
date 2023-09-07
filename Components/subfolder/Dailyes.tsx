@@ -560,8 +560,11 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
                 <Text style={styles.titlemap}>{items.title}</Text>
                 <Text style={styles.infomap}>{items.kg}</Text>
 
-                <TouchableOpacity onPress={()=>navigation.navigate("Details",{itemId: items.id})}  >
-                <Image style={styles.imagemap} source={items.Image} />
+                <TouchableOpacity
+                  onPress={() =>
+                    navigation.navigate('Details', {itemId: items.id})
+                  }>
+                  <Image style={styles.imagemap} source={items.Image} />
                 </TouchableOpacity>
                 <View
                   style={{
@@ -595,7 +598,12 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {Prods.map(products => (
               <View key={products.id} style={styles.thrdmap1}>
-                <Image style={styles.thrdimg} source={products.Image} />
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Details', {itemId: products.id});
+                  }}>
+                  <Image style={styles.thrdimg} source={products.Image} />
+                </TouchableOpacity>
                 <Text style={styles.thrdt1}>{products.title}</Text>
                 <Text style={styles.thrdt2}>{products.kg}</Text>
                 <View
@@ -675,7 +683,13 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
                 key={allitems.id}>
                 <Text style={styles.title}>{allitems.name}</Text>
                 <Text style={styles.name}>{allitems.title}</Text>
-                <Image style={styles.image} source={allitems.Image} />
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Details', {itemId: allitems.id});
+                  }}>
+                  <Image style={styles.image} source={allitems.Image} />
+                </TouchableOpacity>
+
                 <Text style={styles.price}>${allitems.price}</Text>
                 <Text style={styles.kg}>{allitems.kg}</Text>
                 <View style={styles.addContainer}>
@@ -797,7 +811,12 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
               data={Footer}
               renderItem={({item}) => (
                 <View style={styles.itemparent}>
-                  <Image source={item.Image} style={styles.itemimg} />
+                  <TouchableOpacity
+                    onPress={() =>
+                      navigation.navigate('Details', {itemId: item.id})
+                    }>
+                    <Image source={item.Image} style={styles.itemimg} />
+                  </TouchableOpacity>
                   <Text style={styles.itemtitle}>{item.title}</Text>
                   <Text style={styles.itemkg}>{item.kg}</Text>
                   <View
