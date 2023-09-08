@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -12,14 +11,14 @@ import {
 import {Data, Footer, Lays, Prods, needs, pack} from './Products';
 import {NavigationProp} from '@react-navigation/native';
 import Login from './Login';
-import {useState} from 'react';
-import {CartContext, useCart} from '../ShopContext';
+import React, {useState} from 'react';
+import {useCart} from '../ShopContext';
 
 type DailyesProps = {
   navigation: NavigationProp<any>;
 };
 const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
-  const {addToCart, cartItems} = useCart();
+  const {addToCart} = useCart();
   const loginPress = () => {
     navigation.navigate('Login');
   };
@@ -329,12 +328,10 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
                 />
                 <Text style={{color: 'black'}}>Atta,Dal</Text>
               </View>
-
               <View
                 style={{
                   justifyContent: 'space-around',
                   alignItems: 'center',
-
                   width: 90,
                   height: 110,
                   borderRadius: 6,
