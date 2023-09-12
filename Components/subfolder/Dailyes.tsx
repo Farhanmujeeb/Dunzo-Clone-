@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,27 +8,36 @@ import {
   ScrollView,
   TextInput,
   FlatList,
+  Modal,
 } from 'react-native';
 import {Data, Footer, Lays, Prods, needs, pack} from './Products';
 import {NavigationProp} from '@react-navigation/native';
 import Login from './Login';
-import React, {useState} from 'react';
 import {useCart} from '../ShopContext';
 
 type DailyesProps = {
   navigation: NavigationProp<any>;
 };
+
 const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
   const {addToCart} = useCart();
   const loginPress = () => {
     navigation.navigate('Login');
   };
   const [isLoginVisible, setLoginVisible] = useState(false);
+  const [isEnjoyModalVisible, setEnjoyModalVisible] = useState(false);
   const openLogin = () => {
     setLoginVisible(true);
   };
   const closeLogin = () => {
     setLoginVisible(false);
+  };
+
+  const showEnjoyModal = () => {
+    setEnjoyModalVisible(true);
+    setTimeout(() => {
+      setEnjoyModalVisible(false);
+    }, 700);
   };
 
   return (
@@ -87,7 +97,10 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
                   </Text>
                 </View>
                 <TouchableOpacity
-                  onPress={() => addToCart(item.id)}
+                  onPress={() => {
+                    addToCart(item.id);
+                    showEnjoyModal();
+                  }}
                   style={styles.addbut}>
                   <Text style={{fontWeight: '500'}}>+</Text>
                 </TouchableOpacity>
@@ -571,7 +584,10 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
                   }}>
                   <Text style={styles.pricemap}>${items.price}</Text>
                   <TouchableOpacity
-                    onPress={() => addToCart(items.id)}
+                    onPress={() => {
+                      addToCart(items.id);
+                      showEnjoyModal();
+                    }}
                     style={styles.addbut2}>
                     <Text style={{fontWeight: '500'}}>+</Text>
                   </TouchableOpacity>
@@ -611,7 +627,10 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
                   }}>
                   <Text style={styles.thrdt3}>${products.price}</Text>
                   <TouchableOpacity
-                    onPress={() => addToCart(products.id)}
+                    onPress={() => {
+                      addToCart(products.id);
+                      showEnjoyModal();
+                    }}
                     style={styles.addbut3}>
                     <Text>+</Text>
                   </TouchableOpacity>
@@ -691,7 +710,10 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
                 <Text style={styles.kg}>{allitems.kg}</Text>
                 <View style={styles.addContainer}>
                   <TouchableOpacity
-                    onPress={() => addToCart(allitems.id)}
+                    onPress={() => {
+                      addToCart(allitems.id);
+                      showEnjoyModal();
+                    }}
                     style={styles.addButton}>
                     <Text style={styles.addText}>+Add</Text>
                   </TouchableOpacity>
@@ -824,7 +846,10 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
                     }}>
                     <Text style={styles.itemprice}>${item.price}</Text>
                     <TouchableOpacity
-                      onPress={() => addToCart(item.id)}
+                      onPress={() => {
+                        addToCart(item.id);
+                        showEnjoyModal();
+                      }}
                       style={styles.addbut3}>
                       <Text>+</Text>
                     </TouchableOpacity>
@@ -852,6 +877,21 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
           />
         </View>
       </ScrollView>
+      <View>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={isEnjoyModalVisible}
+          onRequestClose={() => {
+            setEnjoyModalVisible(false);
+          }}>
+          <View style={styles.enjoyModalContainer}>
+            <View style={styles.enjoyModalContent}>
+              <Text style={styles.enjoyModalText}>Item Added</Text>
+            </View>
+          </View>
+        </Modal>
+      </View>
     </View>
   );
 };
@@ -1194,6 +1234,30 @@ const styles = StyleSheet.create({
     marginTop: 5,
     color: 'green',
     fontWeight: 'bold',
+  },
+
+  enjoyModalContainer: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+
+  enjoyModalContent: {
+    backgroundColor: 'rgba(0, 128, 0, 0.9)',
+    padding: 20,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+  },
+
+  enjoyModalText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: 'white',
   },
 });
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   FlatList,
   ScrollView,
+  Modal,
 } from 'react-native';
 import {Data, Footer, Lays, Prods, pack} from '../subfolder/Products';
 import {useCart} from '../ShopContext';
@@ -49,13 +50,21 @@ const Details = () => {
     return relatedProducts;
   };
   const relatedProducts = getRelatedProducts(selectedItem, selectAll);
+  const [isEnjoyModalVisible, setEnjoyModalVisible] = useState(false);
+
+  const showEnjoyModal = () => {
+    setEnjoyModalVisible(true);
+    setTimeout(() => {
+      setEnjoyModalVisible(false);
+    }, 1000);
+  };
 
   return (
     <ScrollView>
       <View style={styles.container}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Text style={styles.closeButton}>x</Text>
+            <Text style={styles.closeButton}>➔</Text>
           </TouchableOpacity>
         </View>
 
@@ -67,6 +76,7 @@ const Details = () => {
           <TouchableOpacity
             onPress={() => {
               addToCart(selectedItem.id);
+              showEnjoyModal(); 
             }}
             style={styles.addButton}>
             <Text style={styles.addButtonText}>Add to Cart</Text>
@@ -96,6 +106,20 @@ const Details = () => {
           />
         </View>
       </View>
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={isEnjoyModalVisible}
+        onRequestClose={() => {
+          setEnjoyModalVisible(false);
+        }}>
+        <View style={styles.enjoyModalContainer}>
+          <View style={styles.enjoyModalContent}>
+            <Text style={styles.enjoyModalText}>Item Added</Text>
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 };
@@ -180,6 +204,30 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: 'red',
     textAlign: 'center',
+  },
+
+  enjoyModalContainer: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+
+  enjoyModalContent: {
+    backgroundColor: 'rgba(0, 128, 0, 0.9)',
+    padding: 20,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+  },
+
+  enjoyModalText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: 'white',
   },
 });
 
