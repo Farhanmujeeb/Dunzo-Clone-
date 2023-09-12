@@ -35,7 +35,7 @@ const Home: React.FC<HomeProps> = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image style={styles.logo} source={require('./aseets/dunzodaily.webp')} />
-      <Text style={styles.title}>Welcome to Dunzo Daily</Text>
+      <Text style={styles.title}>Welcome to GrocHub</Text>
       <Text style={styles.subtitle}>Your Delivery Partner</Text>
       <View style={styles.inputContainer}>
         <TextInput
