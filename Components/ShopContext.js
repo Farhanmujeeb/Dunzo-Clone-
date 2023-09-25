@@ -101,7 +101,7 @@ export const CartProvider = ({children}) => {
     </CartContext.Provider>
   );
 };
-
+   
 export const useCart = () => {
   return useContext(CartContext);
 };
