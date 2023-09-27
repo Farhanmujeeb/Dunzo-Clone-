@@ -7,7 +7,9 @@ import Stores from './subfolder/Stores';
 
 import Orders from './subfolder/Orders';
 import Courier from './subfolder/Courier';
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();  
+
+
 const Daily = () => {
   return (
     <Tab.Navigator
