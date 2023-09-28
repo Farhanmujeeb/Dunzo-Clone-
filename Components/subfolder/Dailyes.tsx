@@ -424,7 +424,10 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
                 />
                 <Text style={{color: 'black'}}>Desserts</Text>
               </View>
-              <View
+              <View   
+
+
+   
                 style={{
                   justifyContent: 'space-around',
                   alignItems: 'center',
