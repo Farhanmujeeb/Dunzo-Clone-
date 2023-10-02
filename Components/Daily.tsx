@@ -4,11 +4,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Dailyes from './subfolder/Dailyes';
 import Stores from './subfolder/Stores';
 
-
 import Orders from './subfolder/Orders';
 import Courier from './subfolder/Courier';
-const Tab = createBottomTabNavigator();  
-
+const Tab = createBottomTabNavigator();
 
 const Daily = () => {
   return (
@@ -43,9 +41,10 @@ const Daily = () => {
           },
         }}
       />
+
       <Tab.Screen
         name="Courier"
-        component={Courier as React.FC} 
+        component={Courier as React.FC}
         options={{
           tabBarIcon: ({focused}) => {
             return (
