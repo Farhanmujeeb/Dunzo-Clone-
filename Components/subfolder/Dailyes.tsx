@@ -138,7 +138,8 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
                 height: 150,
                 borderRadius: 15,
                 marginLeft: 20,
-              }}
+              }}    
+              
               source={require('../Images/three.jpg')}
             />
             <Image
