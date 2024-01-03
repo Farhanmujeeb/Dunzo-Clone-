@@ -3,7 +3,6 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Dailyes from './subfolder/Dailyes';
 import Stores from './subfolder/Stores';
-
 import Orders from './subfolder/Orders';
 import Courier from './subfolder/Courier';
 const Tab = createBottomTabNavigator();
