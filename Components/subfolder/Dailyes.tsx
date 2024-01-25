@@ -64,7 +64,7 @@ const Dailyes: React.FC<DailyesProps> = ({navigation}) => {
         <View style={styles.fimgd}>
           <Image
             style={styles.fimg}
-            source={require('../aseets/grocery.webp')}
+         source={require('../aseets/grocery.webp')}
           />
         </View>
         <View style={styles.spotv}>
